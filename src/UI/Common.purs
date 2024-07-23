@@ -7,7 +7,6 @@ import Halogen.HTML as H
 import Halogen.HTML.Properties as P
 import Halogen.Themes.Bootstrap5 as B
 import Network.RemoteData (RemoteData(..))
-
 import Quotes.API (APIResponse)
 
 -- | Type representing the application component's state record.
@@ -16,6 +15,13 @@ type State = { response :: APIResponse }
 -- | Constructs an empty `HTML` element.
 empty :: forall w i. HTML w i
 empty = H.text mempty
+
+responseEmoji :: forall e a w i. RemoteData e a -> HTML w i
+responseEmoji = H.text <<< case _ of
+  Loading -> "⏳"
+  Failure _ -> "❌"
+  Success _ -> "✅"
+  _ -> mempty
 
 -- | Constructs `HTML` when the given condition is `true`.
 whenElem :: forall w i. Boolean -> (Unit -> HTML w i) -> HTML w i
