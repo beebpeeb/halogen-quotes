@@ -1,0 +1,20 @@
+package:
+  name: quotes
+  dependencies:
+    - affjax-web
+    - argonaut
+    - console
+    - effect
+    - formatters
+    - halogen
+    - halogen-bootstrap5
+    - prelude
+    - remotedata
+  test:
+    main: Test.Main
+    dependencies:
+      - spec
+workspace:
+  extraPackages: {}
+  packageSet:
+    registry: 55.2.0

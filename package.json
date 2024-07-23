@@ -1,0 +1,18 @@
+{
+  "name": "quotes",
+  "private": true,
+  "scripts": {
+    "build": "spago build && vite build",
+    "compile": "spago build",
+    "preview": "spago build && vite preview",
+    "repl": "spago repl",
+    "start": "spago build && vite --open",
+    "test": "spago test"
+  },
+  "devDependencies": {
+    "bootstrap": "^5.3.3",
+    "purescript": "^0.15.15",
+    "spago": "^0.93.37",
+    "vite": "^5.3.4"
+  }
+}
