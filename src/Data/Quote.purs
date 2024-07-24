@@ -4,13 +4,12 @@ module Quotes.Data.Quote
   , decodeJsonQuotes
   , getAuthor
   , getContent
-  , getFirst
   ) where
 
 import Prelude
 
 import Data.Argonaut (class DecodeJson, Json, JsonDecodeError, (.:), decodeJson)
-import Data.Array.NonEmpty (NonEmptyArray, head)
+import Data.Array.NonEmpty (NonEmptyArray)
 import Data.Either (Either)
 import Data.String.NonEmpty (NonEmptyString, toString)
 import Data.Traversable (traverse)
@@ -42,6 +41,3 @@ getAuthor (Quote q) = toString q.author
 
 getContent :: Quote -> String
 getContent (Quote q) = toString q.content
-
-getFirst :: Quotes -> Quote
-getFirst = head

@@ -1,7 +1,5 @@
 module Quotes.UI.Header where
 
-import Prelude
-
 import Halogen (ComponentHTML)
 import Halogen.HTML as H
 import Halogen.HTML.Properties as P
