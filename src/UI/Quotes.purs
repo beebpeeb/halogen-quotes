@@ -16,7 +16,7 @@ render { response } =
     [ withSpinner response renderQuote ]
   where
   renderQuote q =
-    H.div_ [ H.h4 [ P.classes [ B.textPrimary, B.textUppercase ] ]
+    H.div_ [ H.h4 [ P.class_ B.textPrimary ]
       [ H.text $ getAuthor q ]
       , H.p [ P.class_ B.textMuted ]
           [ H.text $ getContent q ]

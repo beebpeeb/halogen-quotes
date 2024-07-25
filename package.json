@@ -13,7 +13,8 @@
     "bootstrap": "^5.3.3",
     "purescript": "^0.15.15",
     "purescript-language-server": "^0.18.0",
+    "purs-backend-es": "^1.4.2",
     "spago": "^0.93.37",
-    "vite": "^5.3.4"
+    "vite": "^5.3.5"
   }
 }

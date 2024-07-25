@@ -8,6 +8,5 @@ import Halogen.VDom.Driver (runUI)
 
 import Quotes.UI.Container (component)
 
--- | Mount the Halogen container component into the DOM.
 main :: Effect Unit
 main = runHalogenAff $ runUI component unit =<< awaitBody

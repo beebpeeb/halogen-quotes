@@ -106,7 +106,7 @@ workspace:
         - web-xhr
   package_set:
     address:
-      registry: 55.2.0
+      registry: 55.3.0
     compiler: ">=0.15.15 <0.16.0"
     content:
       abc-parser: 2.0.1
@@ -431,6 +431,7 @@ workspace:
       precise-datetime: 7.0.0
       prelude: 6.0.1
       prettier-printer: 3.0.0
+      priority-queue: 0.1.0
       profunctor: 6.0.1
       profunctor-lenses: 8.0.0
       protobuf: 4.3.0
