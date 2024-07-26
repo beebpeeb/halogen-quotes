@@ -20,7 +20,7 @@ fetchQuote = get json url >>= decodeResponse >>> fromEither >>> pure
   decodeResponse =
     lmap printError
       >=> _.body
-      >>> decodeJsonQuotes
-      >>> bimap printJsonDecodeError head
+        >>> decodeJsonQuotes
+        >>> bimap printJsonDecodeError head
 
   url = "https://api.quotable.io/quotes/random?limit=1"
