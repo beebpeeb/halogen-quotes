@@ -23,6 +23,8 @@ newtype Quote = Quote
 
 derive instance eqQuote :: Eq Quote
 
+derive instance ordQuote :: Ord Quote
+
 instance decodeJsonQuote :: DecodeJson Quote where
   decodeJson json = do
     obj <- decodeJson json
