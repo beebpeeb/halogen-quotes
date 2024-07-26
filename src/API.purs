@@ -15,12 +15,12 @@ import Quotes.Data.Quote (Quote, decodeJsonQuotes)
 type APIResponse = RemoteData String Quote
 
 fetchQuote :: Aff APIResponse
-fetchQuote = get json url >>= decode >>> fromEither >>> pure
+fetchQuote = get json url >>= decodeResponse >>> fromEither >>> pure
   where
-  decode =
+  decodeResponse =
     lmap printError
       >=> _.body
-        >>> decodeJsonQuotes
-        >>> bimap printJsonDecodeError head
+      >>> decodeJsonQuotes
+      >>> bimap printJsonDecodeError head
 
   url = "https://api.quotable.io/quotes/random?limit=1"
