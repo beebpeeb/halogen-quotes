@@ -16,9 +16,9 @@ empty = H.text mempty
 
 responseEmoji :: forall e a w i. RemoteData e a -> HTML w i
 responseEmoji = H.text <<< case _ of
-  Loading -> "⏳"
-  Failure _ -> "❌"
-  Success _ -> "✅"
+  Loading -> "\x23F3"
+  Failure _ -> "\x274C"
+  Success _ -> "\x2705"
   _ -> mempty
 
 whenElem :: forall w i. Boolean -> (Unit -> HTML w i) -> HTML w i
