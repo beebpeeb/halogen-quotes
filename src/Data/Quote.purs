@@ -33,7 +33,7 @@ instance decodeJsonQuote :: DecodeJson Quote where
     pure $ Quote { author, content }
 
 instance showQuote :: Show Quote where
-  show (Quote q) = "(Quote " <> show q.content <> ")"
+  show quote = "(Quote " <> show (getContent quote) <> ")"
 
 decodeJsonQuotes :: Json -> Either JsonDecodeError Quotes
 decodeJsonQuotes = decodeJson >=> traverse decodeJson
