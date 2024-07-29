@@ -7,7 +7,7 @@ import Halogen.HTML as H
 import Halogen.HTML.Properties as P
 import Halogen.Themes.Bootstrap5 as B
 
-import Quotes.Data.Quote (getAuthor, getContent)
+import Quotes.Data.Quote (printAuthor, printContent)
 import Quotes.UI.Common (State, withSpinner)
 
 render :: forall a m. State -> ComponentHTML a () m
@@ -17,7 +17,7 @@ render { response } =
   where
   renderQuote q =
     H.div_ [ H.h4 [ P.class_ B.textPrimary ]
-      [ H.text $ getAuthor q ]
+      [ H.text $ printAuthor q ]
       , H.p [ P.class_ B.textMuted ]
-          [ H.text $ getContent q ]
+          [ H.text $ printContent q ]
       ]

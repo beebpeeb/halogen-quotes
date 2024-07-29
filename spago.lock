@@ -106,7 +106,7 @@ workspace:
         - web-xhr
   package_set:
     address:
-      registry: 55.3.0
+      registry: 56.0.0
     compiler: ">=0.15.15 <0.16.0"
     content:
       abc-parser: 2.0.1
@@ -261,7 +261,6 @@ workspace:
       generate-values: 1.0.1
       generic-router: 0.0.1
       geojson: 0.0.5
-      geometry-plane: 1.1.0
       gojs: 0.1.1
       grain: 3.0.0
       grain-router: 3.0.0

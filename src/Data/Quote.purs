@@ -2,8 +2,8 @@ module Quotes.Data.Quote
   ( Quote
   , Quotes
   , decodeJsonQuotes
-  , getAuthor
-  , getContent
+  , printAuthor
+  , printContent
   ) where
 
 import Prelude
@@ -33,13 +33,13 @@ instance decodeJsonQuote :: DecodeJson Quote where
     pure $ Quote { author, content }
 
 instance showQuote :: Show Quote where
-  show quote = "(Quote " <> show (getContent quote) <> ")"
+  show quote = "(Quote " <> show (printContent quote) <> ")"
 
 decodeJsonQuotes :: Json -> Either JsonDecodeError Quotes
 decodeJsonQuotes = decodeJson >=> traverse decodeJson
 
-getAuthor :: Quote -> String
-getAuthor (Quote q) = toString q.author
+printAuthor :: Quote -> String
+printAuthor (Quote { author }) = toString author
 
-getContent :: Quote -> String
-getContent (Quote q) = toString q.content
+printContent :: Quote -> String
+printContent (Quote { content }) = toString content
