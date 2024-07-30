@@ -106,7 +106,7 @@ workspace:
         - web-xhr
   package_set:
     address:
-      registry: 56.0.0
+      registry: 56.2.0
     compiler: ">=0.15.15 <0.16.0"
     content:
       abc-parser: 2.0.1
@@ -202,15 +202,15 @@ workspace:
       dotenv: 4.0.3
       droplet: 0.6.0
       dts: 1.0.0
-      dual-numbers: 1.0.2
+      dual-numbers: 1.0.3
       dynamic-buffer: 3.0.1
       echarts-simple: 0.0.1
       effect: 4.0.0
       either: 6.1.0
-      elmish: 0.12.0
+      elmish: 0.13.0
       elmish-enzyme: 0.1.1
       elmish-hooks: 0.10.3
-      elmish-html: 0.8.3
+      elmish-html: 0.9.0
       elmish-testing-library: 0.3.2
       email-validate: 7.0.0
       encoding: 0.0.9
@@ -261,6 +261,7 @@ workspace:
       generate-values: 1.0.1
       generic-router: 0.0.1
       geojson: 0.0.5
+      geometria: 2.1.0
       gojs: 0.1.1
       grain: 3.0.0
       grain-router: 3.0.0
@@ -394,7 +395,7 @@ workspace:
       now: 6.0.0
       npm-package-json: 2.0.0
       nullable: 6.0.0
-      numberfield: 0.2.0
+      numberfield: 0.2.1
       numbers: 9.0.1
       oak: 3.1.1
       oak-debug: 1.2.2
@@ -497,11 +498,11 @@ workspace:
       simple-ulid: 3.0.0
       sized-matrices: 1.0.0
       sized-vectors: 5.0.2
-      slug: 3.0.8
+      slug: 3.1.0
       small-ffi: 4.0.1
       soundfonts: 4.1.0
-      sparse-matrices: 2.0.0
-      sparse-polynomials: 3.0.0
+      sparse-matrices: 2.0.1
+      sparse-polynomials: 3.0.1
       spec: 7.6.1
       spec-discovery: 8.3.0
       spec-mocha: 5.1.1

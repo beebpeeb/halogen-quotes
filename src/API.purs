@@ -15,9 +15,9 @@ import Quotes.Data.Quote (Quote, decodeJsonQuotes)
 type APIResponse = RemoteData String Quote
 
 fetchQuote :: Aff APIResponse
-fetchQuote = get json url >>= decodeResponse >>> fromEither >>> pure
+fetchQuote = get json url >>= decode >>> fromEither >>> pure
   where
-  decodeResponse =
+  decode =
     lmap printError
       >=> _.body
         >>> decodeJsonQuotes
