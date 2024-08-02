@@ -106,7 +106,7 @@ workspace:
         - web-xhr
   package_set:
     address:
-      registry: 56.2.0
+      registry: 56.3.0
     compiler: ">=0.15.15 <0.16.0"
     content:
       abc-parser: 2.0.1
@@ -261,7 +261,7 @@ workspace:
       generate-values: 1.0.1
       generic-router: 0.0.1
       geojson: 0.0.5
-      geometria: 2.1.0
+      geometria: 2.2.0
       gojs: 0.1.1
       grain: 3.0.0
       grain-router: 3.0.0
@@ -395,7 +395,7 @@ workspace:
       now: 6.0.0
       npm-package-json: 2.0.0
       nullable: 6.0.0
-      numberfield: 0.2.1
+      numberfield: 0.2.2
       numbers: 9.0.1
       oak: 3.1.1
       oak-debug: 1.2.2
