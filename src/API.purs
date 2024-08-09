@@ -9,7 +9,6 @@ import Data.Array.NonEmpty (head)
 import Data.Bifunctor (bimap, lmap)
 import Effect.Aff (Aff)
 import Network.RemoteData (RemoteData, fromEither)
-
 import Quotes.Data.Quote (Quote, decodeJsonQuotes)
 
 type APIResponse = RemoteData String Quote
