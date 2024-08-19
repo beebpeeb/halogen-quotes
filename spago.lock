@@ -106,7 +106,7 @@ workspace:
         - web-xhr
   package_set:
     address:
-      registry: 56.4.0
+      registry: 57.2.0
     compiler: ">=0.15.15 <0.16.0"
     content:
       abc-parser: 2.0.1
@@ -401,9 +401,11 @@ workspace:
       oak-debug: 1.2.2
       object-maps: 0.3.0
       ocarina: 1.5.4
-      open-folds: 6.3.0
-      open-memoize: 6.1.0
-      open-pairing: 6.1.0
+      oooooooooorrrrrrrmm-lib: 0.0.1
+      open-folds: 6.4.0
+      open-memoize: 6.2.0
+      open-mkdirp-aff: 1.2.0
+      open-pairing: 6.2.0
       options: 7.0.0
       optparse: 5.0.1
       ordered-collections: 3.2.0
@@ -531,6 +533,7 @@ workspace:
       thermite-dom: 0.3.1
       these: 6.0.0
       threading: 0.0.3
+      tldr: 0.0.0
       toestand: 0.9.0
       transformation-matrix: 1.0.1
       transformers: 6.1.0
@@ -572,7 +575,7 @@ workspace:
       vectors: 2.1.0
       versions: 7.0.0
       visx: 0.0.2
-      web-clipboard: 5.0.0
+      web-clipboard: 6.0.0
       web-cssom: 2.0.0
       web-cssom-view: 0.1.0
       web-dom: 6.0.0
@@ -1503,8 +1506,8 @@ packages:
       - prelude
   web-clipboard:
     type: registry
-    version: 5.0.0
-    integrity: sha256-TbZEMovHhks9Qa7JXodJabvKDpeFkl6swfPKqhXd/lE=
+    version: 6.0.0
+    integrity: sha256-PBtjiekTFBRs2obkiwNAEs3f6e1daFGHeeG0pilug4c=
     dependencies:
       - js-promise
       - web-html
