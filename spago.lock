@@ -106,7 +106,7 @@ workspace:
         - web-xhr
   package_set:
     address:
-      registry: 57.2.0
+      registry: 57.2.1
     compiler: ">=0.15.15 <0.16.0"
     content:
       abc-parser: 2.0.1
@@ -428,7 +428,7 @@ workspace:
       pointed-list: 0.5.1
       polymorphic-vectors: 4.0.0
       posix-types: 6.0.0
-      postgresql: 2.0.17
+      postgresql: 2.0.19
       precise: 6.0.0
       precise-datetime: 7.0.0
       prelude: 6.0.1
