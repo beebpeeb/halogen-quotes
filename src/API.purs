@@ -18,8 +18,7 @@ fetchQuote :: Aff APIResponse
 fetchQuote = get json url <#> decode
   where
   decode = (lmap printError >=> decodeBody) >>> fromEither
-  decodeAll = decodeJson >=> traverse decodeJson
-  decodeBody { body } = bimap printJsonDecodeError identity (decodeAll body) <#> head
+  decodeBody { body } = bimap printJsonDecodeError identity (decodeJson body >>= traverse decodeJson) <#> head
 
 url :: URL
 url = "https://api.quotable.io/quotes/random?limit=1"
