@@ -11,9 +11,6 @@ import Quotes.API (APIResponse)
 
 type State = { response :: APIResponse }
 
-empty :: forall w i. HTML w i
-empty = H.text mempty
-
 responseEmoji :: forall e a w i. RemoteData e a -> HTML w i
 responseEmoji = H.text <<< case _ of
   Loading -> "\x23F3"
@@ -22,10 +19,10 @@ responseEmoji = H.text <<< case _ of
   _ -> mempty
 
 whenElem :: forall w i. Boolean -> (Unit -> HTML w i) -> HTML w i
-whenElem cond f = if cond then f unit else empty
+whenElem cond f = if cond then f unit else H.text mempty
 
 withSpinner :: forall e a w i. RemoteData e a -> (a -> HTML w i) -> HTML w i
 withSpinner remoteData f = case remoteData of
   Success a -> f a
   Loading -> H.div [ P.classes [ B.spinnerBorder, B.textMuted ] ] []
-  _ -> empty
+  _ -> H.text mempty
