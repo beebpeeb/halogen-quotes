@@ -2,6 +2,7 @@ module Quotes.Data.Quote
   ( Quote
   , Quotes
   , decodeQuotes
+  , getFirstQuote
   , printAuthor
   , printContent
   ) where
@@ -9,7 +10,7 @@ module Quotes.Data.Quote
 import Prelude
 
 import Data.Argonaut (class DecodeJson, Json, JsonDecodeError, (.:), decodeJson)
-import Data.Array.NonEmpty (NonEmptyArray)
+import Data.Array.NonEmpty (NonEmptyArray, head)
 import Data.Either (Either)
 import Data.String.NonEmpty (NonEmptyString, toString)
 import Data.Traversable (traverse)
@@ -37,6 +38,9 @@ instance showQuote :: Show Quote where
 
 decodeQuotes :: Json -> Either JsonDecodeError Quotes
 decodeQuotes = decodeJson >=> traverse decodeJson
+
+getFirstQuote :: Quotes -> Quote
+getFirstQuote = head
 
 printAuthor :: Quote -> String
 printAuthor (Quote { author }) = toString author
