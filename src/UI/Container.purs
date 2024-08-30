@@ -9,11 +9,11 @@ import Halogen (Component, defaultEval, mkComponent, mkEval)
 import Halogen.HTML (html_)
 import Network.RemoteData (RemoteData(..))
 
-import Quotes.API (fetchQuote)
+import Quotes.API (fetchQuotes)
 import Quotes.UI.Header as Header
 import Quotes.UI.Quote as Quote
 
-data Action = FetchQuote
+data Action = FetchQuotes
 
 component :: forall q i o m. MonadAff m => Component q i o m
 component =
@@ -29,12 +29,12 @@ component =
     }
   where
   handleAction = case _ of
-    FetchQuote -> do
-      response <- liftAff fetchQuote
+    FetchQuotes -> do
+      response <- liftAff fetchQuotes
       modify_ _ { response = response }
 
   initialState = const { response: Loading }
 
-  initialize = Just FetchQuote
+  initialize = Just FetchQuotes
 
   render = html_ <<< flap [ Header.render, Quote.render ]

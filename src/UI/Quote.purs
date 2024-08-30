@@ -2,6 +2,7 @@ module Quotes.UI.Quote where
 
 import Prelude
 
+import Data.Array.NonEmpty (head)
 import Halogen (ComponentHTML)
 import Halogen.HTML as H
 import Halogen.HTML.Properties as P
@@ -13,11 +14,15 @@ import Quotes.UI.Common (State, withSpinner)
 render :: forall a m. State -> ComponentHTML a () m
 render { response } =
   H.section [ P.class_ B.container ]
-    [ withSpinner response renderQuote ]
+    [ withSpinner response renderQuotes ]
   where
-  renderQuote q =
-    H.div_ [ H.h4 [ P.class_ B.textPrimary ]
-      [ H.text $ printAuthor q ]
-      , H.p [ P.class_ B.textMuted ]
-          [ H.text $ printContent q ]
-      ]
+  renderQuotes quotes =
+    let
+      firstQuote = head quotes
+    in
+      H.div_
+        [ H.h4 [ P.class_ B.textPrimary ]
+            [ H.text $ printAuthor firstQuote ]
+        , H.p [ P.class_ B.textMuted ]
+            [ H.text $ printContent firstQuote ]
+        ]
