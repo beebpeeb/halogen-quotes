@@ -13,6 +13,7 @@ import Data.Bifunctor (bimap, lmap)
 import Effect.Aff (Aff)
 import Network.RemoteData (RemoteData)
 import Network.RemoteData as RemoteData
+
 import Quotes.Data.Quote (Quotes)
 import Quotes.Data.Quote as Quote
 

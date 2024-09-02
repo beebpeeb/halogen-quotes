@@ -7,6 +7,7 @@ import Halogen.HTML as H
 import Halogen.HTML.Properties as P
 import Halogen.Themes.Bootstrap5 as B
 import Network.RemoteData (RemoteData(..))
+
 import Quotes.API (APIResponse)
 
 type State = { response :: APIResponse }
