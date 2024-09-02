@@ -8,12 +8,13 @@ import Halogen.HTML.Properties as P
 import Halogen.Themes.Bootstrap5 as B
 
 import Quotes.Data.Quote as Quote
-import Quotes.UI.Common (State, withSpinner)
+import Quotes.UI.Common (State)
+import Quotes.UI.Common as UI
 
 render :: forall a m. State -> ComponentHTML a () m
 render { response } =
   H.section [ P.class_ B.container ]
-    [ withSpinner response renderQuotes ]
+    [ UI.withSpinner response renderQuotes ]
   where
   renderQuotes quotes =
     let

@@ -5,7 +5,8 @@ import Halogen.HTML as H
 import Halogen.HTML.Properties as P
 import Halogen.Themes.Bootstrap5 as B
 
-import Quotes.UI.Common (State, responseEmoji)
+import Quotes.UI.Common (State)
+import Quotes.UI.Common as UI
 
 render :: forall a m. State -> ComponentHTML a () m
 render { response } =
@@ -15,7 +16,7 @@ render { response } =
             [ H.h1 [ P.class_ B.display3 ]
                 [ H.text "Halogen Quotes" ]
             , H.h3 [ P.classes [ B.fs5, B.textInfo ] ]
-                [ responseEmoji response ]
+                [ UI.responseEmoji response ]
             ]
         ]
     ]
