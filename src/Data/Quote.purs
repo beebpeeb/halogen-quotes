@@ -2,7 +2,7 @@ module Quotes.Data.Quote
   ( Quote
   , Quotes
   , decodeQuotes
-  , getFirstQuote
+  , first
   , printAuthor
   , printContent
   ) where
@@ -39,8 +39,8 @@ instance showQuote :: Show Quote where
 decodeQuotes :: Json -> Either JsonDecodeError Quotes
 decodeQuotes = decodeJson >=> traverse decodeJson
 
-getFirstQuote :: Quotes -> Quote
-getFirstQuote = head
+first :: Quotes -> Quote
+first = head
 
 printAuthor :: Quote -> String
 printAuthor (Quote { author }) = toString author

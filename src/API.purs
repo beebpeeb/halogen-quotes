@@ -1,5 +1,6 @@
 module Quotes.API
-  ( APIResponse
+  ( APIError
+  , APIResponse
   , fetchQuotes
   ) where
 
@@ -13,7 +14,9 @@ import Effect.Aff (Aff)
 import Network.RemoteData (RemoteData, fromEither)
 import Quotes.Data.Quote (Quotes, decodeQuotes)
 
-type APIResponse = RemoteData String Quotes
+type APIError = String
+
+type APIResponse = RemoteData APIError Quotes
 
 fetchQuotes :: Aff APIResponse
 fetchQuotes = get json url <#> decode
