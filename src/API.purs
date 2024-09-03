@@ -6,27 +6,24 @@ module Quotes.API
 
 import Prelude
 
-import Affjax.ResponseFormat as ResponseFormat
-import Affjax.Web (URL)
-import Affjax.Web as Affjax
-import Data.Argonaut as Argonaut
+import Affjax.ResponseFormat (json)
+import Affjax.Web (URL, get, printError)
+import Data.Argonaut (printJsonDecodeError)
 import Data.Bifunctor (bimap, lmap)
 import Effect.Aff (Aff)
-import Network.RemoteData (RemoteData)
-import Network.RemoteData as RemoteData
+import Network.RemoteData (RemoteData, fromEither)
 
-import Quotes.Data.Quote (Quotes)
-import Quotes.Data.Quote as Quote
+import Quotes.Data.Quote (Quotes, decodeQuotes)
 
 type APIError = String
 
 type APIResponse = RemoteData APIError Quotes
 
 fetchQuotes :: Aff APIResponse
-fetchQuotes = Affjax.get ResponseFormat.json url <#> decode
+fetchQuotes = get json url <#> decode
   where
-  decode = (lmap Affjax.printError >=> decodeBody) >>> RemoteData.fromEither
-  decodeBody { body } = bimap Argonaut.printJsonDecodeError identity (Quote.decode body)
+  decode = (lmap printError >=> decodeBody) >>> fromEither
+  decodeBody { body } = bimap printJsonDecodeError identity (decodeQuotes body)
 
 url :: URL
 url = "https://api.quotable.io/quotes/random?limit=1"

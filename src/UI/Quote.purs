@@ -7,22 +7,21 @@ import Halogen.HTML as H
 import Halogen.HTML.Properties as P
 import Halogen.Themes.Bootstrap5 as B
 
-import Quotes.Data.Quote as Quote
-import Quotes.UI.Common (State)
-import Quotes.UI.Common as UI
+import Quotes.Data.Quote (first, printAuthor, printContent)
+import Quotes.UI.Common (State, withSpinner)
 
 render :: forall a m. State -> ComponentHTML a () m
 render { response } =
   H.section [ P.class_ B.container ]
-    [ UI.withSpinner response renderQuotes ]
+    [ withSpinner response renderQuotes ]
   where
   renderQuotes quotes =
     let
-      quote = Quote.first quotes
+      quote = first quotes
     in
       H.div_
         [ H.h4 [ P.class_ B.textPrimary ]
-            [ H.text $ Quote.printAuthor quote ]
+            [ H.text $ printAuthor quote ]
         , H.p [ P.class_ B.textMuted ]
-            [ H.text $ Quote.printContent quote ]
+            [ H.text $ printContent quote ]
         ]

@@ -1,7 +1,7 @@
 module Quotes.Data.Quote
   ( Quote
   , Quotes
-  , decode
+  , decodeQuotes
   , first
   , printAuthor
   , printContent
@@ -36,8 +36,8 @@ instance decodeJsonQuote :: DecodeJson Quote where
 instance showQuote :: Show Quote where
   show quote = "(Quote " <> show (printContent quote) <> ")"
 
-decode :: Json -> Either JsonDecodeError Quotes
-decode = decodeJson >=> traverse decodeJson
+decodeQuotes :: Json -> Either JsonDecodeError Quotes
+decodeQuotes = decodeJson >=> traverse decodeJson
 
 first :: Quotes -> Quote
 first = head
