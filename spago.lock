@@ -109,7 +109,7 @@ workspace:
         build_plan: []
   package_set:
     address:
-      registry: 58.0.0
+      registry: 58.0.1
     compiler: ">=0.15.15 <0.16.0"
     content:
       abc-parser: 2.0.1
@@ -277,7 +277,7 @@ workspace:
       halogen-css: 10.0.0
       halogen-echarts-simple: 0.0.4
       halogen-formless: 4.0.3
-      halogen-helix: 1.0.0
+      halogen-helix: 1.0.1
       halogen-hooks: 0.6.3
       halogen-hooks-extra: 0.9.0
       halogen-infinite-scroll: 1.1.0
