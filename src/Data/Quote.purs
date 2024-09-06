@@ -11,12 +11,12 @@ module Quotes.Data.Quote
 import Prelude
 
 import Data.Argonaut (class DecodeJson, Json, JsonDecodeError, (.:), decodeJson)
-import Data.Array.NonEmpty (NonEmptyArray, head, length)
 import Data.Either (Either)
+import Data.List.NonEmpty (NonEmptyList, head, length)
 import Data.String.NonEmpty (NonEmptyString, toString)
 import Data.Traversable (traverse)
 
-type Quotes = NonEmptyArray Quote
+type Quotes = NonEmptyList Quote
 
 newtype Quote = Quote
   { author :: NonEmptyString
