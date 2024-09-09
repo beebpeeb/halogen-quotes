@@ -109,13 +109,13 @@ workspace:
         build_plan: []
   package_set:
     address:
-      registry: 58.0.1
+      registry: 60.0.0
     compiler: ">=0.15.15 <0.16.0"
     content:
       abc-parser: 2.0.1
       ace: 9.1.0
       address-rfc2821: 0.1.1
-      aff: 7.1.0
+      aff: 8.0.0
       aff-bus: 6.0.0
       aff-coroutines: 9.0.0
       aff-promise: 4.0.0
@@ -174,7 +174,7 @@ workspace:
       classnames: 2.0.0
       codec: 6.1.0
       codec-argonaut: 10.0.0
-      codec-json: 1.2.0
+      codec-json: 2.0.0
       colors: 7.0.1
       concur-core: 0.5.0
       concur-react: 0.5.0
@@ -618,10 +618,9 @@ workspace:
 packages:
   aff:
     type: registry
-    version: 7.1.0
-    integrity: sha256-7hOC6uQO9XBAI5FD8F33ChLjFAiZVfd4BJMqlMh7TNU=
+    version: 8.0.0
+    integrity: sha256-5MmdI4+0RHBtSBy+YlU3/Cq4R5W2ih3OaRedJIrVHdk=
     dependencies:
-      - arrays
       - bifunctors
       - control
       - datetime
