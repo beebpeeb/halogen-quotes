@@ -5,7 +5,7 @@ import Prelude
 import Affjax.ResponseFormat (json)
 import Affjax.Web (URL, get, printError)
 import Data.Argonaut (printJsonDecodeError)
-import Data.Bifunctor (bimap, lmap)
+import Data.Bifunctor (lmap)
 import Effect.Aff (Aff)
 import Network.RemoteData (RemoteData, fromEither)
 
@@ -19,7 +19,7 @@ fetchQuotes :: Aff APIResponse
 fetchQuotes = get json url <#> decode
   where
   decode response = lmap printError response >>= decodeBody # fromEither
-  decodeBody { body } = bimap printJsonDecodeError identity $ decodeQuotes body
+  decodeBody { body } = lmap printJsonDecodeError $ decodeQuotes body
 
 url :: URL
 url = "https://api.quotable.io/quotes/random?limit=1"
