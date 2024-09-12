@@ -18,8 +18,8 @@ type APIResponse = RemoteData APIError Quotes
 fetchQuotes :: Aff APIResponse
 fetchQuotes = get json url <#> decode
   where
-  decode = (lmap printError >=> decodeBody) >>> fromEither
-  decodeBody { body } = bimap printJsonDecodeError identity (decodeQuotes body)
+  decode response = fromEither $ lmap printError response >>= decodeBody
+  decodeBody { body } = bimap printJsonDecodeError identity $ decodeQuotes body
 
 url :: URL
 url = "https://api.quotable.io/quotes/random?limit=1"
