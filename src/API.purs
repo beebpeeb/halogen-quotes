@@ -1,8 +1,4 @@
-module Quotes.API
-  ( APIError
-  , APIResponse
-  , fetchQuotes
-  ) where
+module Quotes.API where
 
 import Prelude
 
