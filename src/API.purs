@@ -18,7 +18,7 @@ type APIResponse = RemoteData APIError Quotes
 fetchQuotes :: Aff APIResponse
 fetchQuotes = get json url <#> decode
   where
-  decode response = fromEither $ lmap printError response >>= decodeBody
+  decode response = lmap printError response >>= decodeBody # fromEither
   decodeBody { body } = bimap printJsonDecodeError identity $ decodeQuotes body
 
 url :: URL
