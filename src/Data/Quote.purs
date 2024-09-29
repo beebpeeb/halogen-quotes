@@ -1,9 +1,7 @@
 module Quotes.Data.Quote
   ( Quote
   , Quotes
-  , count
-  , decodeQuotes
-  , first
+  , decodeJsonQuotes
   , printAuthor
   , printContent
   ) where
@@ -12,11 +10,10 @@ import Prelude
 
 import Data.Argonaut (class DecodeJson, Json, JsonDecodeError, (.:), decodeJson)
 import Data.Either (Either)
-import Data.List.NonEmpty (NonEmptyList, head, length)
 import Data.String.NonEmpty (NonEmptyString, toString)
 import Data.Traversable (traverse)
 
-type Quotes = NonEmptyList Quote
+type Quotes = Array Quote
 
 newtype Quote = Quote
   { author :: NonEmptyString
@@ -37,14 +34,8 @@ instance decodeJsonQuote :: DecodeJson Quote where
 instance showQuote :: Show Quote where
   show quote = "(Quote " <> show (printContent quote) <> ")"
 
-count :: Quotes -> Int
-count = length
-
-decodeQuotes :: Json -> Either JsonDecodeError Quotes
-decodeQuotes = decodeJson >=> traverse decodeJson
-
-first :: Quotes -> Quote
-first = head
+decodeJsonQuotes :: Json -> Either JsonDecodeError Quotes
+decodeJsonQuotes = decodeJson >=> traverse decodeJson
 
 printAuthor :: Quote -> String
 printAuthor (Quote { author }) = toString author

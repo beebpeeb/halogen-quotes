@@ -3,23 +3,21 @@ module Quotes.API where
 import Prelude
 
 import Affjax.ResponseFormat (json)
-import Affjax.Web (URL, get, printError)
+import Affjax.Web (get, printError)
 import Data.Argonaut (printJsonDecodeError)
 import Data.Bifunctor (lmap)
 import Effect.Aff (Aff)
 import Network.RemoteData (RemoteData, fromEither)
 
-import Quotes.Data.Quote (Quotes, decodeQuotes)
+import Quotes.Data.Quote (Quotes, decodeJsonQuotes)
 
 type APIError = String
 
 type APIResponse = RemoteData APIError Quotes
 
 fetchQuotes :: Aff APIResponse
-fetchQuotes = get json url <#> decode
+fetchQuotes = fromEither <$> decode <$> get json url
   where
-  decode response = lmap printError response >>= decodeBody # fromEither
-  decodeBody { body } = lmap printJsonDecodeError $ decodeQuotes body
-
-url :: URL
-url = "https://api.quotable.io/quotes/random?limit=1"
+  decode = lmap printError >=> decodeBody
+  decodeBody = lmap printJsonDecodeError <<< decodeJsonQuotes <<< _.body
+  url = "https://api.quotable.io/quotes/random?limit=1"
