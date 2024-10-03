@@ -2,7 +2,7 @@ module Test.API where
 
 import Prelude
 
-import Data.Array (null)
+import Data.List (null)
 import Network.RemoteData (RemoteData(..))
 import Test.Spec (Spec, describe, it)
 import Test.Spec.Assertions (shouldSatisfy)
