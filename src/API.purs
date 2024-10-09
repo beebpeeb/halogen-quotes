@@ -21,5 +21,3 @@ fetchQuotes = fromEither <$> decode <$> get json url
   decode = lmap printError >=> decodeBody
   decodeBody = lmap printJsonDecodeError <<< decodeJsonQuotes <<< _.body
   url = "https://api.quotable.io/quotes/random?limit=1"
-
--- Is it worth implementing an Application Monad for a small application?
