@@ -16,12 +16,11 @@ render { response } =
   H.section [ P.class_ B.container ]
     [ withSpinner response renderQuotes ]
   where
-  renderQuotes = case _ of
-    Nil -> H.text mempty
-    (quote : _) ->
-      H.div_
-        [ H.h4 [ P.class_ B.textPrimary ]
-            [ H.text $ printAuthor quote ]
-        , H.p [ P.class_ B.textMuted ]
-            [ H.text $ printContent quote ]
-        ]
+  renderQuotes Nil = H.text mempty
+  renderQuotes (quote : _) =
+    H.div_
+      [ H.h4 [ P.class_ B.textPrimary ]
+          [ H.text $ printAuthor quote ]
+      , H.p [ P.class_ B.textMuted ]
+          [ H.text $ printContent quote ]
+      ]

@@ -28,10 +28,9 @@ component =
               }
     }
   where
-  handleAction = case _ of
-    FetchQuotes -> do
-      response <- liftAff fetchQuotes
-      modify_ _ { response = response }
+  handleAction FetchQuotes = do
+    response <- liftAff fetchQuotes
+    modify_ _ { response = response }
 
   initialState = const { response: Loading }
 
