@@ -18,4 +18,4 @@ spec = describe "API" do
 
 isSuccessfulQuote :: APIResponse -> Boolean
 isSuccessfulQuote (Success quotes) = not $ null quotes
-isSuccessfulQuote _ -> false
+isSuccessfulQuote _ = false
