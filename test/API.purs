@@ -17,6 +17,5 @@ spec = describe "API" do
       result `shouldSatisfy` isSuccessfulQuote
 
 isSuccessfulQuote :: APIResponse -> Boolean
-isSuccessfulQuote = case _ of
-  Success quotes -> not $ null quotes
-  _ -> false
+isSuccessfulQuote (Success quotes) = not $ null quotes
+isSuccessfulQuote _ -> false
