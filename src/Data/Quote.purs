@@ -10,11 +10,10 @@ import Prelude
 
 import Data.Argonaut (class DecodeJson, Json, JsonDecodeError, (.:), decodeJson)
 import Data.Either (Either)
-import Data.List (List)
 import Data.String.NonEmpty (NonEmptyString, toString)
 import Data.Traversable (traverse)
 
-type Quotes = List Quote
+type Quotes = Array Quote
 
 newtype Quote = Quote
   { author :: NonEmptyString

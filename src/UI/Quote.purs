@@ -2,7 +2,6 @@ module Quotes.UI.Quote where
 
 import Prelude
 
-import Data.List (List(..), (:))
 import Halogen (ComponentHTML)
 import Halogen.HTML as H
 import Halogen.HTML.Properties as P
@@ -16,11 +15,11 @@ render { response } =
   H.section [ P.class_ B.container ]
     [ withSpinner response renderQuotes ]
   where
-  renderQuotes Nil = H.text mempty
-  renderQuotes (quote : _) =
+  renderQuotes [ quote, _ ] =
     H.div_
       [ H.h4 [ P.class_ B.textPrimary ]
           [ H.text $ printAuthor quote ]
       , H.p [ P.class_ B.textMuted ]
           [ H.text $ printContent quote ]
       ]
+  renderQuotes _ = H.text mempty
