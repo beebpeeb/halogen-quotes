@@ -190,7 +190,7 @@
     },
     "package_set": {
       "address": {
-        "registry": "60.5.1"
+        "registry": "60.6.0"
       },
       "compiler": ">=0.15.15 <0.16.0",
       "content": {
@@ -525,7 +525,7 @@
         "priority-queue": "0.1.2",
         "profunctor": "6.0.1",
         "profunctor-lenses": "8.0.0",
-        "protobuf": "4.3.0",
+        "protobuf": "4.4.0",
         "psa-utils": "8.0.0",
         "psci-support": "6.0.0",
         "punycode": "1.0.0",
