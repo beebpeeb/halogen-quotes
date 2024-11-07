@@ -190,7 +190,7 @@
     },
     "package_set": {
       "address": {
-        "registry": "60.6.0"
+        "registry": "60.7.0"
       },
       "compiler": ">=0.15.15 <0.16.0",
       "content": {
@@ -248,7 +248,7 @@
         "chameleon-transformers": "1.0.0",
         "channel": "1.0.0",
         "checked-exceptions": "3.1.1",
-        "choku": "1.0.1",
+        "choku": "1.0.2",
         "classless": "0.1.1",
         "classless-arbitrary": "0.1.1",
         "classless-decode-json": "0.1.1",
@@ -698,6 +698,7 @@
         "yoga-json": "5.1.0",
         "yoga-om": "0.1.0",
         "yoga-postgres": "6.0.0",
+        "yoga-subtlecrypto": "0.1.0",
         "yoga-tree": "1.0.0",
         "z3": "0.0.2",
         "zipperarray": "2.0.0"
