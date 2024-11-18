@@ -13,7 +13,7 @@ render { response } =
     [ H.div [ P.class_ B.container ]
         [ H.div [ P.class_ B.row ]
             [ H.h1 [ P.class_ B.display3 ]
-                [ H.text "Quotes" ]
+                [ H.text "Pure Quotes" ]
             , H.h3 [ P.classes [ B.fs5, B.textInfo ] ]
                 [ responseEmoji response ]
             ]
