@@ -1,8 +1,4 @@
-module Quotes.Data.Quote
-  ( Quote
-  , printAuthor
-  , printContent
-  ) where
+module Quotes.Data.Quote where
 
 import Prelude
 

@@ -12,8 +12,8 @@ import Quotes.API (APIResponse)
 
 type State = { response :: APIResponse }
 
-responseEmoji :: forall e a w i. RemoteData e a -> HTML w i
-responseEmoji = H.text <<< case _ of
+emoji :: forall e a w i. RemoteData e a -> HTML w i
+emoji = H.text <<< case _ of
   Loading -> "\x23F3"
   Failure _ -> "\x274C"
   Success _ -> "\x2705"
