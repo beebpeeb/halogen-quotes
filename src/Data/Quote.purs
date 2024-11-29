@@ -1,9 +1,16 @@
-module Quotes.Data.Quote where
+module Quotes.Data.Quote
+  ( Quote
+  , Quotes
+  , printAuthor
+  , printContent
+  ) where
 
 import Prelude
 
 import Data.Argonaut (class DecodeJson, (.:), decodeJson)
 import Data.String.NonEmpty (NonEmptyString, toString)
+
+type Quotes = Array Quote
 
 newtype Quote = Quote
   { author :: NonEmptyString

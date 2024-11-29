@@ -17,4 +17,4 @@ package:
 workspace:
   extraPackages: {}
   packageSet:
-    registry: 61.1.0
+    registry: 61.2.0

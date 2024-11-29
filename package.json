@@ -12,6 +12,9 @@
   "devDependencies": {
     "bootstrap": "^5.3.3",
     "bootswatch": "^5.3.3",
-    "vite": "^5.4.11"
+    "purescript": "^0.15.15",
+    "purs-tidy": "^0.11.0",
+    "spago": "^0.93.41",
+    "vite": "^6.0.1"
   }
 }

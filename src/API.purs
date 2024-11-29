@@ -15,19 +15,19 @@ import Data.Traversable (traverse)
 import Effect.Aff (Aff)
 import Network.RemoteData (RemoteData, fromEither)
 
-import Quotes.Data.Quote (Quote)
+import Quotes.Data.Quote (Quotes)
 
 type APIError = String
 
-type APIResponse = RemoteData APIError (Array Quote)
+type APIResponse = RemoteData APIError Quotes
 
-decodePayload :: Json -> Either JsonDecodeError (Array Quote)
-decodePayload = decodeJson >=> traverse decodeJson
+decodeBody :: Json -> Either JsonDecodeError Quotes
+decodeBody = decodeJson >=> traverse decodeJson
 
 fetchQuotes :: Aff APIResponse
 fetchQuotes = fromEither <$> decode <$> get json url
   where
-  decode = lmap printError >=> _.body >>> decodePayload >>> lmap printJsonDecodeError
+  decode = lmap printError >=> _.body >>> decodeBody >>> lmap printJsonDecodeError
 
 url :: URL
-url = "https://api.quotable.io/quotes/random?limit=1"
+url = "https://api.quotable.io/quotes/random"

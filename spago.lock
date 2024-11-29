@@ -190,7 +190,7 @@
     },
     "package_set": {
       "address": {
-        "registry": "61.1.0"
+        "registry": "61.2.0"
       },
       "compiler": ">=0.15.15 <0.16.0",
       "content": {
@@ -307,7 +307,7 @@
         "exists": "6.0.0",
         "exitcodes": "4.0.0",
         "expect-inferred": "3.0.0",
-        "ezfetch": "1.0.0",
+        "ezfetch": "1.1.0",
         "fahrtwind": "2.0.0",
         "fallback": "0.1.0",
         "fast-vect": "1.2.0",
@@ -398,7 +398,7 @@
         "js-date": "8.0.0",
         "js-fetch": "0.2.1",
         "js-fileio": "3.0.0",
-        "js-intl": "1.0.4",
+        "js-intl": "1.1.4",
         "js-iterators": "0.1.1",
         "js-maps": "0.1.2",
         "js-promise": "1.0.0",
