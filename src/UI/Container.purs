@@ -2,10 +2,9 @@ module Quotes.UI.Container where
 
 import Prelude
 
-import Control.Monad.State.Class (modify_)
 import Data.Maybe (Maybe(..))
-import Effect.Aff.Class (class MonadAff, liftAff)
-import Halogen (Component, defaultEval, mkComponent, mkEval)
+import Effect.Aff.Class (class MonadAff)
+import Halogen (Component, defaultEval, liftAff, mkComponent, mkEval, modify_)
 import Halogen.HTML (html_)
 import Network.RemoteData (RemoteData(..))
 
