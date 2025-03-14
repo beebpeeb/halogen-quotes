@@ -12,6 +12,6 @@
   "devDependencies": {
     "bootstrap": "^5.3.3",
     "bootswatch": "^5.3.3",
-    "vite": "^6.1.1"
+    "vite": "^6.2.2"
   }
 }
