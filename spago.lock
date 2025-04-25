@@ -117,7 +117,7 @@
     },
     "package_set": {
       "address": {
-        "registry": "63.9.1"
+        "registry": "64.4.0"
       },
       "compiler": ">=0.15.15 <0.16.0",
       "content": {
@@ -157,8 +157,8 @@
         "b64": "0.0.8",
         "barbies": "1.0.1",
         "barlow-lens": "0.9.0",
-        "benchlib": "0.0.2",
-        "bifunctors": "6.0.0",
+        "benchlib": "0.0.4",
+        "bifunctors": "6.1.0",
         "bigints": "7.0.1",
         "bolson": "0.3.9",
         "bookhound": "0.1.7",
@@ -291,7 +291,7 @@
         "halogen-declarative-canvas": "0.0.8",
         "halogen-echarts-simple": "0.0.4",
         "halogen-formless": "4.0.3",
-        "halogen-helix": "1.0.1",
+        "halogen-helix": "1.1.0",
         "halogen-hooks": "0.6.3",
         "halogen-hooks-extra": "0.9.0",
         "halogen-infinite-scroll": "1.1.0",
@@ -300,6 +300,7 @@
         "halogen-subscriptions": "2.0.0",
         "halogen-svg-elems": "8.0.0",
         "halogen-typewriter": "1.0.4",
+        "halogen-use-trigger-hooks": "1.0.0",
         "halogen-vdom": "8.0.0",
         "halogen-vdom-string-renderer": "0.5.0",
         "halogen-xterm": "2.0.0",
@@ -493,6 +494,7 @@
         "recharts": "1.1.0",
         "record": "4.0.0",
         "record-extra": "5.0.1",
+        "record-extra-srghma": "0.1.1",
         "record-ptional-fields": "0.1.2",
         "record-studio": "1.0.4",
         "refs": "6.0.0",
@@ -567,7 +569,7 @@
         "transformation-matrix": "1.0.1",
         "transformers": "6.1.0",
         "tree-rose": "4.0.2",
-        "trivial-unfold": "0.4.1",
+        "trivial-unfold": "0.5.0",
         "ts-bridge": "4.0.0",
         "tuples": "7.0.0",
         "two-or-more": "1.0.0",
@@ -596,11 +598,13 @@
         "untagged-union": "1.0.0",
         "uri": "9.0.0",
         "url-immutable": "1.0.0",
+        "url-regex-safe": "0.1.1",
         "uuid": "9.0.0",
         "uuidv4": "1.0.0",
         "validation": "6.0.0",
         "variant": "8.0.0",
         "variant-encodings": "2.0.0",
+        "variant-gen": "1.0.0",
         "vectorfield": "1.0.1",
         "vectors": "2.1.0",
         "versions": "7.0.0",
@@ -802,8 +806,8 @@
     },
     "bifunctors": {
       "type": "registry",
-      "version": "6.0.0",
-      "integrity": "sha256-/gZwC9YhNxZNQpnHa5BIYerCGM2jeX9ukZiEvYxm5Nw=",
+      "version": "6.1.0",
+      "integrity": "sha256-6enQzl1vqnFTQZ1WX9BnoOOVdPGO9WZvVXldHckVQvY=",
       "dependencies": [
         "const",
         "either",
