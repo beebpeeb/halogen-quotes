@@ -1,13 +1,9 @@
-module Quotes.API
-  ( APIError
-  , APIResponse
-  , fetchQuotes
-  ) where
+module Quotes.API where
 
 import Prelude
 
 import Affjax.ResponseFormat (json)
-import Affjax.Web (get, printError)
+import Affjax.Web (URL, get, printError)
 import Data.Argonaut (decodeJson, printJsonDecodeError)
 import Data.Bifunctor (lmap)
 import Data.Traversable (traverse)
@@ -25,4 +21,6 @@ fetchQuotes = fromEither <$> decode <$> get json url
   where
   decode = lmap printError >=> _.body >>> decodeAll >>> lmap printJsonDecodeError
   decodeAll = decodeJson >=> traverse decodeJson
-  url = "https://api.quotable.io/quotes/random"
+
+url :: URL
+url = "https://api.quotable.io/quotes/random"
